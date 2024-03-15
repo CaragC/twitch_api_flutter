@@ -3,6 +3,7 @@ import 'package:twitch_api/src/models/twitch_channel_editor.dart';
 import 'package:twitch_api/src/models/twitch_emotes.dart';
 import 'package:twitch_api/src/models/twitch_game_analytic.dart';
 import 'package:twitch_api/src/models/twitch_start_commercial.dart';
+import 'package:twitch_api/src/models/twitch_user_follow_online.dart';
 import 'package:twitch_api/twitch_api.dart';
 
 part 'twitch_response.freezed.dart';
@@ -103,6 +104,20 @@ class UsersFollowsResponse with _$UsersFollowsResponse {
 
   factory UsersFollowsResponse.fromJson(Map<String, dynamic> json) =>
       _$UsersFollowsResponseFromJson(json);
+}
+
+@Freezed(toJson: false, fromJson: true)
+class UsersFollowsOnlineResponse with _$UsersFollowsOnlineResponse   {
+  const factory UsersFollowsOnlineResponse({
+    /// {@macro twitchResponse.data}
+    required List<TwitchUsersFollowsOnline> data,
+
+    /// {@macro twitchResponse.pagination}
+    required Map<String, dynamic>? pagination,
+  }) = _UsersFollowsOnlineResponse;
+
+  factory UsersFollowsOnlineResponse.fromJson(Map<String, dynamic> json) =>
+      _$UsersFollowsOnlineResponseFromJson(json);
 }
 
 /// Specs: https://dev.twitch.tv/docs/api/reference/#get-top-games

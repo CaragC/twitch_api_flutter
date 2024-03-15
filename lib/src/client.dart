@@ -305,7 +305,7 @@ class TwitchClient {
     return UsersFollowsResponse.fromJson(data);
   }
 
-  Future<UsersFollowsResponse> getUserStreamFollows({
+  Future<UsersFollowsOnlineResponse> getUsersFollowsOnline({
     required String userId,
   }) async {
 
@@ -317,7 +317,7 @@ class TwitchClient {
       ['streams', 'followed'],
       queryParameters: queryParameters,
     );
-    return UsersFollowsResponse.fromJson(data);
+    return UsersFollowsOnlineResponse.fromJson(data);
   }
 
   /// Gets games sorted by number of current viewers on Twitch, most popular

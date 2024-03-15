@@ -61,6 +61,16 @@ _$UsersFollowsResponseImpl _$$UsersFollowsResponseImplFromJson(
       total: json['total'] as int,
     );
 
+_$UsersFollowsOnlineResponseImpl _$$UsersFollowsOnlineResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UsersFollowsOnlineResponseImpl(
+      data: (json['data'] as List<dynamic>)
+          .map((e) =>
+              TwitchUsersFollowsOnline.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      pagination: json['pagination'] as Map<String, dynamic>?,
+    );
+
 _$TopGamesResponseImpl _$$TopGamesResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$TopGamesResponseImpl(
