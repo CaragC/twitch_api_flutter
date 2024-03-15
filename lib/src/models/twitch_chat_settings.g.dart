@@ -6,9 +6,9 @@ part of 'twitch_chat_settings.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TwitchChatSettings _$$_TwitchChatSettingsFromJson(
+_$TwitchChatSettingsImpl _$$TwitchChatSettingsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_TwitchChatSettings(
+    _$TwitchChatSettingsImpl(
       broadcasterId: json['broadcaster_id'] as String,
       emoteMode: json['emote_mode'] as bool,
       followerMode: json['follower_mode'] as bool,
@@ -23,8 +23,8 @@ _$_TwitchChatSettings _$$_TwitchChatSettingsFromJson(
       uniqueChatMode: json['unique_chat_mode'] as bool,
     );
 
-Map<String, dynamic> _$$_TwitchChatSettingsToJson(
-        _$_TwitchChatSettings instance) =>
+Map<String, dynamic> _$$TwitchChatSettingsImplToJson(
+        _$TwitchChatSettingsImpl instance) =>
     <String, dynamic>{
       'broadcaster_id': instance.broadcasterId,
       'emote_mode': instance.emoteMode,

@@ -6,67 +6,68 @@ part of 'twitch_custom_reward.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TwitchCustomRewardImage _$$_TwitchCustomRewardImageFromJson(
+_$TwitchCustomRewardImageImpl _$$TwitchCustomRewardImageImplFromJson(
         Map<String, dynamic> json) =>
-    _$_TwitchCustomRewardImage(
+    _$TwitchCustomRewardImageImpl(
       url1x: json['url_1x'] as String,
       url2x: json['url_2x'] as String,
       url4x: json['url_4x'] as String,
     );
 
-Map<String, dynamic> _$$_TwitchCustomRewardImageToJson(
-        _$_TwitchCustomRewardImage instance) =>
+Map<String, dynamic> _$$TwitchCustomRewardImageImplToJson(
+        _$TwitchCustomRewardImageImpl instance) =>
     <String, dynamic>{
       'url_1x': instance.url1x,
       'url_2x': instance.url2x,
       'url_4x': instance.url4x,
     };
 
-_$_TwitchMaxPerStream _$$_TwitchMaxPerStreamFromJson(
+_$TwitchMaxPerStreamImpl _$$TwitchMaxPerStreamImplFromJson(
         Map<String, dynamic> json) =>
-    _$_TwitchMaxPerStream(
+    _$TwitchMaxPerStreamImpl(
       isEnabled: json['is_enabled'] as bool,
       maxPerStream: json['max_per_stream'] as int,
     );
 
-Map<String, dynamic> _$$_TwitchMaxPerStreamToJson(
-        _$_TwitchMaxPerStream instance) =>
+Map<String, dynamic> _$$TwitchMaxPerStreamImplToJson(
+        _$TwitchMaxPerStreamImpl instance) =>
     <String, dynamic>{
       'is_enabled': instance.isEnabled,
       'max_per_stream': instance.maxPerStream,
     };
 
-_$_TwitchMaxPerUserPerStreamSetting
-    _$$_TwitchMaxPerUserPerStreamSettingFromJson(Map<String, dynamic> json) =>
-        _$_TwitchMaxPerUserPerStreamSetting(
+_$TwitchMaxPerUserPerStreamSettingImpl
+    _$$TwitchMaxPerUserPerStreamSettingImplFromJson(
+            Map<String, dynamic> json) =>
+        _$TwitchMaxPerUserPerStreamSettingImpl(
           isEnabled: json['is_enabled'] as bool,
           maxPerUserPerStream: json['max_per_user_per_stream'] as int,
         );
 
-Map<String, dynamic> _$$_TwitchMaxPerUserPerStreamSettingToJson(
-        _$_TwitchMaxPerUserPerStreamSetting instance) =>
+Map<String, dynamic> _$$TwitchMaxPerUserPerStreamSettingImplToJson(
+        _$TwitchMaxPerUserPerStreamSettingImpl instance) =>
     <String, dynamic>{
       'is_enabled': instance.isEnabled,
       'max_per_user_per_stream': instance.maxPerUserPerStream,
     };
 
-_$_TwitchGlobalCooldownSetting _$$_TwitchGlobalCooldownSettingFromJson(
+_$TwitchGlobalCooldownSettingImpl _$$TwitchGlobalCooldownSettingImplFromJson(
         Map<String, dynamic> json) =>
-    _$_TwitchGlobalCooldownSetting(
+    _$TwitchGlobalCooldownSettingImpl(
       isEnabled: json['is_enabled'] as bool,
       globalCooldownSeconds: json['global_cooldown_seconds'] as int,
     );
 
-Map<String, dynamic> _$$_TwitchGlobalCooldownSettingToJson(
-        _$_TwitchGlobalCooldownSetting instance) =>
+Map<String, dynamic> _$$TwitchGlobalCooldownSettingImplToJson(
+        _$TwitchGlobalCooldownSettingImpl instance) =>
     <String, dynamic>{
       'is_enabled': instance.isEnabled,
       'global_cooldown_seconds': instance.globalCooldownSeconds,
     };
 
-_$_TwitchCustomReward _$$_TwitchCustomRewardFromJson(
+_$TwitchCustomRewardImpl _$$TwitchCustomRewardImplFromJson(
         Map<String, dynamic> json) =>
-    _$_TwitchCustomReward(
+    _$TwitchCustomRewardImpl(
       broadcasterName: json['broadcaster_name'] as String,
       broadcasterLogin: json['broadcaster_login'] as String?,
       broadcasterId: json['broadcaster_id'] as String,
@@ -98,8 +99,8 @@ _$_TwitchCustomReward _$$_TwitchCustomRewardFromJson(
       cooldownExpiresAt: json['cooldown_expires_at'] as String?,
     );
 
-Map<String, dynamic> _$$_TwitchCustomRewardToJson(
-        _$_TwitchCustomReward instance) =>
+Map<String, dynamic> _$$TwitchCustomRewardImplToJson(
+        _$TwitchCustomRewardImpl instance) =>
     <String, dynamic>{
       'broadcaster_name': instance.broadcasterName,
       'broadcaster_login': instance.broadcasterLogin,

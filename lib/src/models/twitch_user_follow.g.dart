@@ -6,24 +6,20 @@ part of 'twitch_user_follow.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TwitchUserFollow _$$_TwitchUserFollowFromJson(Map<String, dynamic> json) =>
-    _$_TwitchUserFollow(
+_$TwitchUserFollowImpl _$$TwitchUserFollowImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TwitchUserFollowImpl(
       followedAt: DateTime.parse(json['followed_at'] as String),
-      fromId: json['from_id'] as String,
-      fromLogin: json['from_login'] as String,
-      fromName: json['from_name'] as String,
-      toId: json['to_id'] as String,
-      toLogin: json['to_login'] as String?,
-      toName: json['to_name'] as String,
+      broadcaster_login: json['broadcaster_login'] as String,
+      broadcaster_name: json['broadcaster_name'] as String,
+      broadcaster_id: json['broadcaster_id'] as String,
     );
 
-Map<String, dynamic> _$$_TwitchUserFollowToJson(_$_TwitchUserFollow instance) =>
+Map<String, dynamic> _$$TwitchUserFollowImplToJson(
+        _$TwitchUserFollowImpl instance) =>
     <String, dynamic>{
       'followed_at': instance.followedAt.toIso8601String(),
-      'from_id': instance.fromId,
-      'from_login': instance.fromLogin,
-      'from_name': instance.fromName,
-      'to_id': instance.toId,
-      'to_login': instance.toLogin,
-      'to_name': instance.toName,
+      'broadcaster_login': instance.broadcaster_login,
+      'broadcaster_name': instance.broadcaster_name,
+      'broadcaster_id': instance.broadcaster_id,
     };

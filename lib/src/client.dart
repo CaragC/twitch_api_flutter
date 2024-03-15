@@ -13,7 +13,7 @@ class TwitchClient {
     TwitchHttpClient? twitchHttpClient,
     TwitchToken? token,
   }) : twitchHttpClient =
-            twitchHttpClient ?? TwitchDioClient(clientId: clientId) {
+      twitchHttpClient ?? TwitchDioClient(clientId: clientId) {
     if (token != null) {
       initializeToken(token);
     }
@@ -139,8 +139,8 @@ class TwitchClient {
     String? type,
   }) async {
     assert(
-      (endedAt == null && startedAt == null) ||
-          (endedAt != null && startedAt != null),
+    (endedAt == null && startedAt == null) ||
+        (endedAt != null && startedAt != null),
     );
     assert(first < 101 && first > 0);
 
@@ -181,8 +181,8 @@ class TwitchClient {
     String? type,
   }) async {
     assert(
-      (endedAt == null && startedAt == null) ||
-          (endedAt != null && startedAt != null),
+    (endedAt == null && startedAt == null) ||
+        (endedAt != null && startedAt != null),
     );
     assert(first < 101 && first > 0);
 
@@ -268,8 +268,8 @@ class TwitchClient {
     assert(ids.length < 101, 'You can only request 100 ids at a time');
     assert(logins.length < 101, 'You can only request 100 logins at a time');
     assert(
-      (ids.length + logins.length) < 101,
-      'You can only request 100 ids or logins at a time',
+    (ids.length + logins.length) < 101,
+    'You can only request 100 ids or logins at a time',
     );
 
     final queryParameters = <String, String>{
@@ -291,26 +291,30 @@ class TwitchClient {
   ///
   /// At minimum, `fromId` or `toId` must be provided for a query to be valid.
   Future<UsersFollowsResponse> getUsersFollows({
-    String? after,
-    int first = 20,
-    String? fromId,
-    String? toId,
+    required String userId,
   }) async {
-    assert(first < 101 && first > 0);
-    assert(
-      fromId != null || toId != null,
-      'At minimum, fromId or toId must be provided for a query to be valid.',
-    );
 
     final queryParameters = <String, String>{
-      'first': first.toString(),
-      if (after != null) 'after': after,
-      if (fromId != null) 'from_id': fromId,
-      if (toId != null) 'to_id': toId,
+      'user_id': userId
     };
 
     final data = await twitchHttpClient.getCall<Map<String, dynamic>>(
-      ['users', 'follows'],
+      ['channels', 'followed'],
+      queryParameters: queryParameters,
+    );
+    return UsersFollowsResponse.fromJson(data);
+  }
+
+  Future<UsersFollowsResponse> getUserStreamFollows({
+    required String userId,
+  }) async {
+
+    final queryParameters = <String, String>{
+      'user_id': userId
+    };
+
+    final data = await twitchHttpClient.getCall<Map<String, dynamic>>(
+      ['streams', 'followed'],
       queryParameters: queryParameters,
     );
     return UsersFollowsResponse.fromJson(data);
@@ -372,8 +376,8 @@ class TwitchClient {
   ///
   /// [broadcasterId]: ID of the channel to be updated.
   Future<ChannelInformationResponse> getChannelInformations(
-    String broadcasterId,
-  ) async {
+      String broadcasterId,
+      ) async {
     final data = await twitchHttpClient.getCall<Map<String, dynamic>>(
       ['channels'],
       queryParameters: {'broadcaster_id': broadcasterId},
@@ -632,20 +636,20 @@ class TwitchClient {
     int? delay,
   }) {
     assert(
-      gameId != null ||
-          broadcasterLanguage != null ||
-          title != null ||
-          delay != null,
-      'At least one optional parameter must be provided.',
+    gameId != null ||
+        broadcasterLanguage != null ||
+        title != null ||
+        delay != null,
+    'At least one optional parameter must be provided.',
     );
     assert(
-      broadcasterLanguage == null ||
-          broadcasterLanguage == 'other' ||
-          broadcasterLanguage.length == 2,
+    broadcasterLanguage == null ||
+        broadcasterLanguage == 'other' ||
+        broadcasterLanguage.length == 2,
     );
     assert(
-      title == null || title.isNotEmpty,
-      'The title must not be an empty string.',
+    title == null || title.isNotEmpty,
+    'The title must not be an empty string.',
     );
     assert(delay == null || delay > 0);
 
@@ -839,8 +843,8 @@ class TwitchClient {
   }) async {
     assert(ids.length <= 50, 'ids.length cannot exceed 50');
     assert(
-      ids.isNotEmpty || status != null,
-      'If ids is not provided you need to define a status.',
+    ids.isNotEmpty || status != null,
+    'If ids is not provided you need to define a status.',
     );
     assert(first <= 50 && first >= 0, 'first cannot exceed 50');
 
@@ -939,7 +943,7 @@ class TwitchClient {
       if (isPaused != null) 'is_paused': isPaused,
       if (shouldRedemptionsSkipRequestQueue != null)
         'should_redemptions_skip_request_queue':
-            shouldRedemptionsSkipRequestQueue,
+        shouldRedemptionsSkipRequestQueue,
     };
 
     final data = await twitchHttpClient.patchCall<Map<String, dynamic>>(
@@ -980,8 +984,8 @@ class TwitchClient {
   }) async {
     assert(ids.length <= 50 && ids.isNotEmpty);
     assert(
-      status == TwitchRewardRedemptionStatus.fulfilled ||
-          status == TwitchRewardRedemptionStatus.canceled,
+    status == TwitchRewardRedemptionStatus.fulfilled ||
+        status == TwitchRewardRedemptionStatus.canceled,
     );
     final body = <String, dynamic>{
       'status': status.name.toUpperCase(),

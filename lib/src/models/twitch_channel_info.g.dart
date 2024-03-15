@@ -6,8 +6,9 @@ part of 'twitch_channel_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TwitchChannelInfo _$$_TwitchChannelInfoFromJson(Map<String, dynamic> json) =>
-    _$_TwitchChannelInfo(
+_$TwitchChannelInfoImpl _$$TwitchChannelInfoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TwitchChannelInfoImpl(
       broadcasterId: json['broadcaster_id'] as String,
       broadcasterName: json['broadcaster_name'] as String,
       gameName: json['game_name'] as String,
@@ -17,8 +18,8 @@ _$_TwitchChannelInfo _$$_TwitchChannelInfoFromJson(Map<String, dynamic> json) =>
       delay: json['delay'] as int,
     );
 
-Map<String, dynamic> _$$_TwitchChannelInfoToJson(
-        _$_TwitchChannelInfo instance) =>
+Map<String, dynamic> _$$TwitchChannelInfoImplToJson(
+        _$TwitchChannelInfoImpl instance) =>
     <String, dynamic>{
       'broadcaster_id': instance.broadcasterId,
       'broadcaster_name': instance.broadcasterName,

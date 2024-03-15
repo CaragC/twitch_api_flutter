@@ -6,8 +6,8 @@ part of 'twitch_user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TwitchUser _$$_TwitchUserFromJson(Map<String, dynamic> json) =>
-    _$_TwitchUser(
+_$TwitchUserImpl _$$TwitchUserImplFromJson(Map<String, dynamic> json) =>
+    _$TwitchUserImpl(
       id: json['id'] as String,
       login: json['login'] as String,
       displayName: json['display_name'] as String,
@@ -22,7 +22,7 @@ _$_TwitchUser _$$_TwitchUserFromJson(Map<String, dynamic> json) =>
       createdAt: json['created_at'] as String,
     );
 
-Map<String, dynamic> _$$_TwitchUserToJson(_$_TwitchUser instance) =>
+Map<String, dynamic> _$$TwitchUserImplToJson(_$TwitchUserImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'login': instance.login,

@@ -195,7 +195,7 @@ void main() {
             ),
           ).thenAnswer((_) async => readJson('get_users_follows.json'));
 
-          await client.getUsersFollows(fromId: fromId);
+          await client.getUsersFollows(userId: fromId);
 
           verify(
             () => mockHttpClient.getCall<Map<String, dynamic>>(

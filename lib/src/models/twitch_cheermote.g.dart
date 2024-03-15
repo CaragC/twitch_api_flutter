@@ -6,8 +6,9 @@ part of 'twitch_cheermote.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TwitchCheermote _$$_TwitchCheermoteFromJson(Map<String, dynamic> json) =>
-    _$_TwitchCheermote(
+_$TwitchCheermoteImpl _$$TwitchCheermoteImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TwitchCheermoteImpl(
       prefix: json['prefix'] as String,
       tiers: (json['tiers'] as List<dynamic>)
           .map((e) => TwitchCheermoteTier.fromJson(e as Map<String, dynamic>))
@@ -18,7 +19,8 @@ _$_TwitchCheermote _$$_TwitchCheermoteFromJson(Map<String, dynamic> json) =>
       isCharitable: json['is_charitable'] as bool,
     );
 
-Map<String, dynamic> _$$_TwitchCheermoteToJson(_$_TwitchCheermote instance) =>
+Map<String, dynamic> _$$TwitchCheermoteImplToJson(
+        _$TwitchCheermoteImpl instance) =>
     <String, dynamic>{
       'prefix': instance.prefix,
       'tiers': instance.tiers,

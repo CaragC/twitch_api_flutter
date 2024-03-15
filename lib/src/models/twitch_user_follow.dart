@@ -9,23 +9,13 @@ class TwitchUserFollow with _$TwitchUserFollow {
     /// Date and time when the [fromId] user followed the [toId] user.
     @JsonKey(name: 'followed_at') required DateTime followedAt,
 
-    /// ID of the user following the [toId] user.
-    @JsonKey(name: 'from_id') required String fromId,
-
-    /// Login of the user following the [toId] user.
-    @JsonKey(name: 'from_login') required String fromLogin,
+    @JsonKey(name: 'broadcaster_login') required String broadcaster_login,
 
     /// Display name corresponding to [fromId].
-    @JsonKey(name: 'from_name') required String fromName,
+    @JsonKey(name: 'broadcaster_name') required String broadcaster_name,
 
     /// ID of the user being followed by the [fromId] user.
-    @JsonKey(name: 'to_id') required String toId,
-
-    /// Login of the user being followed by the [fromId] user.
-    @JsonKey(name: 'to_login') required String? toLogin,
-
-    /// Display name corresponding to [toId].
-    @JsonKey(name: 'to_name') required String toName,
+    @JsonKey(name: 'broadcaster_id') required String broadcaster_id,
   }) = _TwitchUserFollow;
 
   factory TwitchUserFollow.fromJson(Map<String, dynamic> json) =>
